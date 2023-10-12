@@ -322,7 +322,8 @@
 
 
 
-    <script>
+<script>
+    let notifier = new AWN();
     
     function scrollToElement(id) {
     const element = document.getElementById(id);
@@ -414,30 +415,18 @@ body: JSON.stringify({ email: email }), // Send the email as JSON
         })
         .then(data => {
             console.log('Success:', data); 
-           // new AWN().success('Grazie per averci contattati!', {durations: {alert: 0}});
-           
-notifier.confirm(
-'Grazie per averci contattati!',
-onOk,
-false,
-{
-  labels: {
-    confirm: ''
-  }
-}
-)
+            new AWN().success('Grazie per averci contattati!', {durations: {alert: 0}});
             document.getElementById('emailInput').value="";
         })
         .catch(error => {
             console.error('Error:', error);
-            alert('Error sending email');
         });
 }
 });
 
 
 
-let notifier = new AWN();
+
 
 
     </script>
