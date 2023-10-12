@@ -1,7 +1,7 @@
 {
-  "name": "simple-tailwind-starter",
+  "name": "web solutions lab",
   "version": "1.0.0",
-  "description": "Fylo landing page with dark/light mode switcher from my Tailwind course and from [Frontend Mentor Challenge](https://www.frontendmentor.io/challenges/loopstudios-landing-page-N88J5Onjw)",
+  "description": "web solutions lab",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -17,8 +17,10 @@
   "dependencies": {
     "awesome-notifications": "^3.1.3",
     "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "js-cookie": "^3.0.5",
     "nodemailer": "^6.9.5"
   }
 }

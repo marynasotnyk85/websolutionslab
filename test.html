@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+   
+    <title>Web Solutions Lab</title>
+  </head>
+  <body class= "font-opensans">
+    <!-- Header -->
+    <header class="container mx-auto mt-10 px-6 text-center h-40 md:h-20">
+      <!-- Dynamic Logo -->
+      <!--<div class="bg-logo-light-mode  bg-no-repeat h-20 w-48 mx-auto md:mx-0 md:absolute top-10 left-10"></div>-->
+      <div class="bg-no-repeat w-20 mx-auto md:mx-0 md:absolute top-10 left-10">
+        <a href="/"> <img src="images/logo_white.png" alt="" class="mx-auto" /></a>
+      </div>
+      <!-- Menu -->
+      <div
+        class="flex items-center justify-center space-x-4 md:space-x-10 md:absolute top-12 right-10"
+      >
+        <a href="#features" class="hover:text-ceruleanBlue">Servizi</a>
+        <a href="#emailform" class="hover:text-ceruleanBlue">Contattaci</a>
+
+      </div>
+    </header>
+
+
+    <!-- Cookie banner-->
+    <section id="banner" class="absolute bottom-0 bg-ceruleanBlue  text-white h-10 w-60 bg-top">
+      <div class="container mx-auto pt-12 px-5 pb-10">
+    
+             Questo sito o strumenti terzi usano cookie necessari al funzionamento ed utili alle finalità illustrate nella cookie policy.
+             Cliccando su 'approvo' confermi di accettare i cookies.
+
+</div> 
+ </section>
+
+    
+    <!-- Hero Section -->
+    <section
+      id="hero"
+      class="bg-curvy-light-mode  bg-no-repeat bg-contain bg-bottom"
+    >
+      <!-- Hero Container -->
+      <div class="container mx-auto px-6 text-center pb-52">
+        <img src="images/img_hero_1.png" alt="" class="mx-auto md:mb-32" />
+        <h1 class="max-w-2xl mx-auto mb-10 text-3xl font-bold leading-normal md:text-4xl text-ceruleanBlue">
+        Realizzazione e Restyling siti web</h1>
+        <p class="max-w-sm mx-auto mb-10 text-sm md:max-w-xl md:text-lg">
+        Programmato <b>su misura</b> in base alle tue esigenze </br>
+       <b>Ottimizzato SEO </b>e altamente performante</br>
+        Con <b>offerte dedicate</b> per piccole e medie imprese</p>
+       
+
+        <button onclick="scrollToElement('emailform')" class="scroll-button p-3 rounded-full w-52 text-white bg-ceruleanBlue hover:scale-95 hover:bg-darkBlue hover:text-white" 
+        >
+         Richiedi il preventivo!
+        </button>
+      </div>
+    </section>
+
+    <!-- Features Section --> 
+    <section id="features" class="pt-12 bg-gray-50">
+      <!-- Features Container -->
+      <div class="container mx-auto px-6 pb-32">
+        <!-- First Row -->
+        <div
+          class="flex flex-col space-y-24 text-center md:flex-row md:space-y-0"
+        >
+          <!-- Item 1 -->
+          <div class="flex flex-col items-center space-y-2 md:w-1/2">
+            <div class="flex items-center justify-center h-24 mb-6">
+              <img src="images/svg-analize.svg" alt="" class="h-20" />
+            </div>
+            <h3 class="text-xl font-bold">Analisi</h3>
+            <p class="max-w-md">
+              Studiamo il tuo mercato e individuiamo i tuoi potenziali clienti e le loro caratteristiche.
+            </p>
+          </div>
+          <!-- Item 2 -->
+          <div class="flex flex-col items-center space-y-2 md:w-1/2 ">
+            <div class="flex items-center justify-center h-24 mb-6">
+              <img src="images/svg-develop.svg" alt=""  class="h-20"/>
+            </div>
+            <h3 class="text-xl font-bold">Sviluppo</h3>
+            <p class="max-w-md">
+              Costruiamo un sito web che rispecchi la tua identità e i tuoi valori esaltando i tuoi punti di forza e le caratteristiche della tua attività.
+            </p>
+          </div>
+        </div>
+
+        <!-- Second Row -->
+        <div
+          class="flex flex-col space-y-24 mt-28 text-center md:flex-row md:space-y-0"
+        >
+          <!-- Item 3 -->
+          <div class="flex flex-col items-center space-y-2 md:w-1/2">
+            <div class="flex items-center justify-center h-24 mb-6">
+              <img src="images/svg-seo.svg" alt=""  class="h-20"/>
+            </div>
+            <h3 class="text-xl font-bold">SEO</h3>
+            <p class="max-w-md">
+              Ogni riga di codice del tuo sito sarà ottimizzata per i motori di ricerca (SEO) per consentire ai tuoi clienti di trovarti facilmente su Google.
+            </p>
+          </div>
+          <!-- Item 4 -->
+          <div class="flex flex-col items-center space-y-2 md:w-1/2">
+            <div class="flex items-center justify-center h-24 mb-6">
+              <img src="images/svg-social.svg" alt="" class="h-20" />
+            </div>
+            <h3 class="text-xl font-bold">Social media marketing</h3>
+            <p class="max-w-md">
+              Strutturiamo la tua attività sui social media per garantirti una presenza efficace e mirata, senza sprecare tempo ed energie e ritorni sull'investimento elevati.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Productive Section -->
+    <section id="productive" class="bg-white">
+      <!-- Productive Container -->
+      <div
+        class="container flex flex-col items-center mx-auto px-6 pt-24 pb-32 md:flex-row md:space-x-16"
+      >
+        <!-- Image -->
+        <div class="md:w-1/2 md:pl-28">
+          <img
+            src="images/webdesc_dark.png"
+            alt=""
+            class="mb-10"
+          />
+        </div>
+        <!-- Content -->
+        <div class="flex flex-col items-start md:w-1/2">
+          <div class="flex flex-col">
+            <h4 class=" text-xl font-bold md:text-4xl"> Devi realizzare un sito web?    </h4>
+            <h4 class=" text-xl font-bold md:text-4xl md:pb-14">O vorresti analizzare il tuo sito già esistente? </h4>
+           <div class="pt-28">
+            <p class="mt-8 text-md md:text-lg">
+              Con <span class="text-ceruleanBlue text-bold text-2xl">Web Solutions Lab</span> hai la garanzia di un sito web professionale ad un prezzo imbattibile! 
+            </p>
+            <p class="text-md md:text-lg">Non accontentarti del solito sito web preconfezionato uguale a mille altri, si può fare di molto meglio e spendendo meno. Scegli una soluzione davvero innovativa!</p>
+          </div>
+          </div>
+        
+        </div>
+      </div>
+    </section>
+
+
+    
+
+    <section id="cookie" class="fixed bottom-0 px-6 pt-8 md:px-0 ">
+      <div
+        class="fixed bottom-0 mb-10  top-10 max-w-4xl mx-auto p-10 px-6 space-y-6 text-center rounded-lg bg-ceruleanBlue "
+      >
+        <h5 class="text-2xl font-bold">Richiedi il preventivo GRATUITO! </h5>
+    
+        </div>
+    </section>
+
+    
+
+    
+
+
+  </body>
+</html>
+

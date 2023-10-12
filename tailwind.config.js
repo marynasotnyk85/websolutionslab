@@ -12,7 +12,8 @@ module.exports = {
         lightRed: 'hsl(0, 100%, 63%)',
         ceruleanBlue: '#007BA7',
         darkBlue:'#001524',
-        jasperRed:'#CD533B'
+        jasperRed:'#CD533B',
+        darkBlueViolet:'#2a2f44'
       },
       fontFamily: {
         sans: ['Raleway', 'sans-serif'],
