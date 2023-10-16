@@ -965,9 +965,14 @@ max-width: 36rem;
 padding-top: 13rem;
 }
 
+.ml-24 {
+  margin-left: 6rem;
+}
+
 .ml-52 {
   margin-left: 13rem;
 }
+
 
 .text-center {
   text-align: center;

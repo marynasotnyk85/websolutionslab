@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:ital,wght@0,400;0,700;1,400&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <script src="index.var.js"></script>
    
     <title>Web Solutions Lab</title>
@@ -38,7 +38,7 @@
           <!-- Flex Container For Logo/Menu -->
           <div class="flex items-center space-x-20">
             <!-- Logo -->
-              <a href="/"> <img src="images/logo_white.png" alt="" class=" w-20 mx-auto md:mx-0 top-10 left-10" /></a>
+              <a href="/"> <img src="/images/logo_white.png" alt="" class=" w-20 mx-auto md:mx-0 top-10 left-10" /></a>
               <!-- Left Menu -->
             <div class="hidden space-x-8 font-bold lg:flex">
               <a href="#features" class="text-gray-500 hover:text-ceruleanBlue"
@@ -105,7 +105,7 @@
       </div>
       <!-- Image -->
       <div class="mb-24 mx-auto center md:w-180 lg:mb-0 lg:w-1/2 pt-12 ">
-        <img src="images/img_hero_1.png" alt="" />
+        <img src="/images/img_hero_1.png" alt="" />
       </div>
     </div>
   </section>
@@ -272,7 +272,7 @@
        <p class="">Questo sito web utilizza i cookie. Cliccando sul pulsante "Accetta cookie" acconsenti all'uso dei soli cookie tecnici. 
          Leggi di più su <a href="/cookie_policy" class="hover:text-darkBlue pl-14">Cookie_Policy</a>   
       <button id="accept" class="ml-52 center p-3 rounded-full w-52 border border-solid border-white  text-white bg-ceruleanBlue hover:scale-95 hover:bg-darkBlue hover:text-white"> Accetta</button>
-      <button id="reject" class="ml-52 center p-3 rounded-full w-52 border border-solid border-white text-white bg-ceruleanBlue hover:scale-95 hover:bg-darkBlue hover:text-white"> Riffiuta</button>
+      <button id="reject" class="ml-24 center p-3 rounded-full w-52 border border-solid border-white text-white bg-ceruleanBlue hover:scale-95 hover:bg-darkBlue hover:text-white"> Riffiuta</button>
     </p>
   </div>
 
@@ -338,7 +338,8 @@
 
 
     <script>
-    
+    let notifier = new AWN();
+
     function scrollToElement(id) {
     const element = document.getElementById(id);
 
@@ -429,30 +430,18 @@ body: JSON.stringify({ email: email }), // Send the email as JSON
         })
         .then(data => {
             console.log('Success:', data); 
-           // new AWN().success('Grazie per averci contattati!', {durations: {alert: 0}});
-           
-notifier.confirm(
-'Grazie per averci contattati!',
-onOk,
-false,
-{
-  labels: {
-    confirm: ''
-  }
-}
-)
+            new AWN().success('Grazie per averci contattati!', {durations: {alert: 0}});
             document.getElementById('emailInput').value="";
         })
         .catch(error => {
             console.error('Error:', error);
-            alert('Error sending email');
         });
 }
 });
 
 
 
-let notifier = new AWN();
+
 
 
     </script>
