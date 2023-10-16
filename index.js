@@ -15,7 +15,7 @@ const app = express();
 const port = process.env.port;
 const emailUser = process.env.EMAIL_USER;
 const emailPass = process.env.EMAIL_PASS;
-
+console.log("Credenziali ...... " + emailUser + emailPass);
 
 
 app.use(express.static('public'));
@@ -66,6 +66,7 @@ app.post("/send-email", (req, res) => {
     
       transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
+            console.log("From ERROR mailOptions" + mailOptions )
           return console.error(error);
         }
         console.log('Message sent: %s', info);
