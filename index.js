@@ -60,7 +60,6 @@ app.get('/cookie_policy', (req, res) => {
 app.post("/send-email-after", (req, res) => {
     var email = req.body.email; // Assuming you're using middleware like 'body-parser'
   
-    console.log("Received email:", email);
   
     let mailOptions = {
         from: emailUser, // sender address
@@ -77,7 +76,7 @@ app.post("/send-email-after", (req, res) => {
         
       });
     
-      res.send("Email sent successfully");
+     // res.send("Email sent successfully");
      
   });
 
@@ -94,6 +93,9 @@ app.post("/send-email-after", (req, res) => {
       var email = req.body.email; // Assuming you're using middleware like 'body-parser'
   
       console.log("Received email:", email);
+      console.log("emailUser *********", emailUser);
+      console.log("email pass*****", emailPass);
+    
      // const result = await axios.post(API_URL + "/secrets", req.body, config);
      // res.render("index.ejs", { content: JSON.stringify(result.data) });
      if (validateEmail(email)) {
