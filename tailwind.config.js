@@ -1,5 +1,9 @@
 module.exports = {
-    content: ['./*.html'],
+    content: [
+      './*.html',
+      './pages/**/*.{html,js}',
+      './components/**/*.{html,js}'
+    ],
     theme: {
       extend: {
         colors: {
@@ -18,12 +22,12 @@ module.exports = {
         fontFamily: {
           sans: ['Raleway', 'sans-serif'],
           opensans: ['Open Sans', 'sans-serif'],
-        },
-        backgroundImage: (theme) => ({
-          'logo-light-mode': "url('../images/logo-light-mode.svg')", 
-          'curvy-light-mode': "url('../images/bg-curvy-light-mode.svg')",
-        }),
+        }
       },
     },
-    plugins: [],
+    plugins: [
+      require('tailwindcss'),
+      require('@tailwindcss/deprecation-warnings'),
+      require('autoprefixer'),
+    ],
   }
