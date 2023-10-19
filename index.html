@@ -241,7 +241,7 @@
             <input
               type="text"
               name="email"
-              class="w-2/3 px-10 py-3 rounded-full focus:outline-none"
+              class="w-auto px-10 py-3 rounded-full focus:outline-none"
               placeholder="Inserisci la tua email "
             />
     
@@ -249,7 +249,7 @@
           <!--<button id="sendEmailButton" value="Submit" class="center p-3 rounded-full w-52  text-white bg-ceruleanBlue hover:scale-95 hover:bg-darkBlue hover:text-white" > NON Contattaci </button>
           -->
          
-            <button type="submit"  class="center p-3 rounded-full w-52  text-white bg-ceruleanBlue hover:scale-95 hover:bg-darkBlue hover:text-white"> Contattaci</button>
+            <button type="submit" id="sendEmailButton" class="mt-10 md:mt-0 center p-3 rounded-full w-52  text-white bg-ceruleanBlue hover:scale-95 hover:bg-darkBlue hover:text-white"> Contattaci</button>
         
           
         </form>
@@ -408,7 +408,7 @@ if (shouldShowPopup(storageType)) {
 };
 
 document.getElementById('sendEmailButton').addEventListener('click', function() {
-  document.getElementById('emailInput').value="";
+  document.getElementById('email').value="";
 
 })
 
