@@ -17,7 +17,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
 const router = express.Router();
 
-const port = process.env.port;
+const port = process.env.port || 10000;
 const emailUser = process.env.EMAIL_USER;
 const emailPass = process.env.EMAIL_PASS;
 
