@@ -235,13 +235,12 @@
           class="flex flex-col items-center space-y-6 md:flex-row md:space-y-0 md:space-x-6"
         >
         <div  class="w-full md:flex-1">
-        <form method="POST" action="/send-email">
- 
-           
+  <!--  <form method="POST" action="/send-email">      --> 
             <input
               type="text"
               name="email"
-              class="w-auto px-10 py-3 rounded-full focus:outline-none"
+              id ="emailInput"
+              class="w-75 px-10 py-3 rounded-full focus:outline-none"
               placeholder="Inserisci la tua email "
             />
     
@@ -249,10 +248,11 @@
           <!--<button id="sendEmailButton" value="Submit" class="center p-3 rounded-full w-52  text-white bg-ceruleanBlue hover:scale-95 hover:bg-darkBlue hover:text-white" > NON Contattaci </button>
           -->
          
-            <button type="submit" id="sendEmailButton" class="mt-10 md:mt-0 center p-3 rounded-full w-52  text-white bg-ceruleanBlue hover:scale-95 hover:bg-darkBlue hover:text-white"> Contattaci</button>
+            <button type="submit" id="sendEmailButton" class="mt-10 md:mt-0 center p-3 rounded-full w-48  text-white bg-ceruleanBlue hover:scale-95 hover:bg-darkBlue hover:text-white"> Contattaci</button>
         
           
-        </form>
+       <!-- </form>-->
+        <div id="notification"></div>
       </div>
           <!-- <button id="post" type="submit" form="myForm" name="email" value="POST" action="/send-email" class="center p-3 rounded-full w-52  text-white bg-ceruleanBlue hover:scale-95 hover:bg-darkBlue hover:text-white"> Contattaci</button>
           -->
@@ -260,6 +260,14 @@
       </div>
     </section>
 
+    <section id="thanksPage" class="px-6 pt-24 md:px-0 mb-10 bottom-32 top-10 max-w-4xl mx-auto p-10 px-6 space-y-6 text-center rounded-lg ">
+      <div id="thanksDiv" class="hidden ">
+        <img src="images/logo_gray.png" alt="" class=" w-20 mx-auto top-10 center py-8" />
+          <h5 class="text-2xl font-bold text-ceruleanBlue py-8"> Grazie di avverci inviato la Sua email! <br><br>
+            In breve La contattatiamo personalmente  </h5>
+      </div>
+
+    </section>
 
      <!-- Cookie -->
     <div id="cookie" class="cookie hidden bg-ceruleanBlue text-white mx-10 p-8  flex-col justify-items-center md:flex-row items-center space-y-6  md:space-y-0">
@@ -407,18 +415,21 @@ if (shouldShowPopup(storageType)) {
 
 };
 
+/*
 document.getElementById('sendEmailButton').addEventListener('click', function() {
-  console.log("button was clicked");
- // document.getElementById('email').value="";
+
+document.getElementById('email').value="";
 
 })
+*/
 
-/*
+
   document.getElementById('sendEmailButton').addEventListener('click', function() {
 var email = document.getElementById('emailInput').value;
 var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
+console.log("email value is" + email);
 if (!emailRegex.test(email)) {
+  console.log("email non valida");
 new AWN().alert('Per favore, inserisci un indirizzo email valido', {durations: {alert: 4000}})
 return; // Stop further execution
 }
@@ -431,6 +442,7 @@ headers: {
 body: JSON.stringify({ email: email }), // Send the email as JSON
 })
 .then(response => {
+  console.log("response " + response);
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -440,6 +452,8 @@ body: JSON.stringify({ email: email }), // Send the email as JSON
             console.log('Success:', data); 
             new AWN().success('Grazie per averci contattati!', {durations: {alert: 0}});
             document.getElementById('emailInput').value="";
+            emailform.setAttribute('class', 'hidden');
+            thanksDiv.setAttribute('class', 'visible bg-gray-200 ');
         })
         .catch(error => {
             console.error('Error:', error);
@@ -447,7 +461,7 @@ body: JSON.stringify({ email: email }), // Send the email as JSON
 }
 });
 
-*/
+
 
 
 

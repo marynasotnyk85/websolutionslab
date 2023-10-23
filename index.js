@@ -17,7 +17,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
 const router = express.Router();
 
-const port = process.env.port || 10000;
+const port = process.env.port;
 const emailUser = process.env.EMAIL_USER;
 const emailPass = process.env.EMAIL_PASS;
 
@@ -41,14 +41,14 @@ let transporter = nodemailer.createTransport({
   res.sendFile(__dirname + "/index.html");
 });
 app.get("/test", (req, res) => {
-  res.sendFile(__dirname + "/dist/test.html");
+  res.sendFile(__dirname + "/test.html");
 });
 
 app.get("/index.html", (req, res) => {
-  res.sendFile(__dirname + "/dist/index.html");
+  res.sendFile(__dirname + "/index.html");
 });
 app.get("/privacy.html", (req, res) => {
-  res.sendFile(__dirname + "/dist/privacy.html");
+  res.sendFile(__dirname + "/privacy.html");
 });
 app.get('/cookie_policy', (req, res) => {
   // Qui inserisci il contenuto dell'informativa sui cookie
@@ -57,7 +57,8 @@ app.get('/cookie_policy', (req, res) => {
 });
 
 
-app.post("/send-email-after", (req, res) => {
+app.post("/send-email", (req, res) => {
+  console.log("backend email " + req.body.email)
     var email = req.body.email; // Assuming you're using middleware like 'body-parser'
   
   
@@ -76,7 +77,7 @@ app.post("/send-email-after", (req, res) => {
         
       });
     
-     // res.send("Email sent successfully");
+     res.send("Email sent successfully");
      
   });
 
@@ -87,20 +88,12 @@ app.post("/send-email-after", (req, res) => {
   
   
 
-  app.post("/send-email", async (req, res) => {
-    console.log(" i am in send-email");
+  app.post("/send-email-after", async (req, res) => {
+console.log("Back end");
     try {
-      var email = req.body.email; // Assuming you're using middleware like 'body-parser'
-  
-      console.log("Received email:", email);
-      console.log("emailUser *********", emailUser);
-      console.log("email pass*****", emailPass);
-    
-     // const result = await axios.post(API_URL + "/secrets", req.body, config);
-     // res.render("index.ejs", { content: JSON.stringify(result.data) });
+      var email = req.body.email; 
      if (validateEmail(email)) {
-   
-   
+     
      let mailOptions = {
          from: emailUser, // sender address
          to:emailUser, // recipient's email address
@@ -115,13 +108,14 @@ app.post("/send-email-after", (req, res) => {
          console.log('Message sent: %s', info);
          
        });
-     
-       res.send("Email sent successfully");
-      }
-      else {
-     
-        console.log("Invalid email address");
-      }
+
+       let notification = "Email sent successfully";
+       res.render('index.ejs', { notification });
+    } else {
+       // Set error message
+       let notification = "Invalid email address";
+       res.render('index.ejs', { notification });
+    }
     } catch (error) {
       console.log(error);
     }
