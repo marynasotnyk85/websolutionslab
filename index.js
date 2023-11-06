@@ -5,6 +5,9 @@ import nodemailer from "nodemailer";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import dotenv from 'dotenv';
+
+
+
 dotenv.config();
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
