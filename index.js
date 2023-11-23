@@ -21,8 +21,8 @@ const app = express();
 const router = express.Router();
 
 const port = process.env.port;
-const emailUser = process.env.EMAIL_USER;
-const emailPass = process.env.EMAIL_PASS;
+const emailWebSite = process.env.EMAIL_USER;
+const emailPassWebSite = process.env.EMAIL_PASS;
 
 
 
@@ -36,8 +36,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 let transporter = nodemailer.createTransport({
     service: 'gmail', // or your SMTP server details
     auth: {
-      user: emailUser,
-      pass: emailPass
+      user: emailWebSite,
+      pass: emailPassWebSite
     },
   });
 
@@ -62,15 +62,15 @@ app.get('/cookie_policy', (req, res) => {
 
 
 app.post("/send-email", (req, res) => {
-    var email = req.body.email; // Assuming you're using middleware like 'body-parser'
+    var emailUser = req.body.email; // Assuming you're using middleware like 'body-parser'
   
-    console.log("Received email:", email);
+    console.log("Received email:", emailUser);
   
     let mailOptions = {
-        from: emailUser, // sender address
-        to:emailUser, // recipient's email address
+        from: emailWebSite, // sender address
+        to: emailWebSite, // recipient's email address
         subject: 'Email from webSite',
-        text: 'Body of your email  -->      '+ email,
+        text: 'Email dal sito -->      '+ emailUser,
       };
     
       transporter.sendMail(mailOptions, (error, info) => {
