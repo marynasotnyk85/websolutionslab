@@ -20,7 +20,13 @@
   -->
   <link rel="stylesheet" href="css/style.css" />
   <script src="index.var.js"></script>
-  <title>Web Solutions Lab</title>
+    <title>Web Solutions Lab</title>
+    <script type="text/javascript">
+      var _iub = _iub || [];
+      _iub.csConfiguration = {"askConsentAtCookiePolicyUpdate":true,"cookiePolicyInOtherWindow":true,"floatingPreferencesButtonDisplay":"bottom-right","perPurposeConsent":true,"siteId":3390774,"whitelabel":false,"cookiePolicyId":98090886,"lang":"it", "banner":{ "acceptButtonDisplay":true,"closeButtonRejects":true,"customizeButtonDisplay":true,"explicitWithdrawal":true,"listPurposes":true,"position":"float-top-center","showTitle":false }};
+      </script>
+      <script type="text/javascript" src="https://cs.iubenda.com/autoblocking/3390774.js"></script>
+      <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
 </head>
 <body class= "font-opensans">
   <!-- Nav Container -->
@@ -327,7 +333,11 @@ class="flex flex-col items-center justify-center w-full space-y-6 font-bold text
         </div>
         
         <div class="flex items-center space-x-3">      
-          <div>COPYRIGHT © 2023 WebSolutionsLab</div>
+          <div>COPYRIGHT   <script>
+            var CurrentYear = new Date().getFullYear()
+            document.write(CurrentYear)
+        </script>
+         WebSolutionsLab</div>
         </div>
         
       </div>
@@ -367,6 +377,7 @@ class="flex flex-col items-center justify-center w-full space-y-6 font-bold text
     
     <script>
       //let notifier = new AWN();
+
       
       function scrollToElement(id) {
         const element = document.getElementById(id);
